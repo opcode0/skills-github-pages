@@ -1,0 +1,72 @@
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* 布局容器 */
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 头部样式 */
+.site-header {
+  background: #f8f8f8;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 20px 0;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.site-nav {
+  margin-top: 10px;
+}
+
+.site-nav a {
+  margin-right: 15px;
+  color: #666;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: #333;
+}
+
+/* 主要内容区 */
+.page-content {
+  padding: 40px 0;
+}
+
+/* 页脚样式 */
+.site-footer {
+  border-top: 1px solid #e7e7e7;
+  padding: 20px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 0 15px;
+  }
+  
+  .page-content {
+    padding: 30px 0;
+  }
+}
