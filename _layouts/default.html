@@ -13,27 +13,89 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
+  <!-- 页眉部分 -->
   <header class="site-header">
-    <div class="wrapper">
-      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      
-      <nav class="site-nav">
-        <a href="{{ '/about' | relative_url }}">关于</a>
-        <a href="{{ '/archive' | relative_url }}">归档</a>
-      </nav>
+    <div class="container">
+      <div class="header-content">
+        <!-- 网站Logo/标题 -->
+        <a class="site-logo" href="{{ '/' | relative_url }}">
+          {% if site.logo %}
+            <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+          {% else %}
+            <h1>{{ site.title }}</h1>
+          {% endif %}
+        </a>
+        
+        <!-- 主导航 -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">首页</a></li>
+            <li><a href="{{ '/about' | relative_url }}">关于</a></li>
+            <li><a href="{{ '/blog' | relative_url }}">博客</a></li>
+            <li><a href="{{ '/contact' | relative_url }}">联系</a></li>
+          </ul>
+        </nav>
+        
+        <!-- 移动端菜单按钮 -->
+        <button class="mobile-menu-button" aria-label="菜单">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="page-content">
-    <div class="wrapper">
+  <!-- 主要内容区 -->
+  <main class="main-content">
+    <div class="container">
       {{ content }}
     </div>
   </main>
 
+  <!-- 页脚部分 -->
   <footer class="site-footer">
-    <div class="wrapper">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. 保留所有权利.</p>
+    <div class="container">
+      <div class="footer-content">
+        <!-- 网站信息 -->
+        <div class="footer-section">
+          <h3>关于{{ site.title }}</h3>
+          <p>{{ site.description }}</p>
+        </div>
+        
+        <!-- 快速链接 -->
+        <div class="footer-section">
+          <h3>快速链接</h3>
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">首页</a></li>
+            <li><a href="{{ '/about' | relative_url }}">关于我们</a></li>
+            <li><a href="{{ '/privacy' | relative_url }}">隐私政策</a></li>
+            <li><a href="{{ '/sitemap.xml' | relative_url }}">网站地图</a></li>
+          </ul>
+        </div>
+        
+        <!-- 联系方式 -->
+        <div class="footer-section">
+          <h3>联系我们</h3>
+          <ul>
+            <li>邮箱: {{ site.email }}</li>
+            <li>电话: {{ site.phone }}</li>
+            <li>
+              <a href="{{ site.social.twitter }}">Twitter</a>
+              <a href="{{ site.social.github }}">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- 版权信息 -->
+      <div class="copyright">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. 保留所有权利.</p>
+      </div>
     </div>
   </footer>
+
+  <!-- JavaScript文件 -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>
